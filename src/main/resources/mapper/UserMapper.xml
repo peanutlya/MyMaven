@@ -6,4 +6,13 @@
     <select id="showAllUser" resultType="entity.User">
         select * from t_user;
     </select>
+    <update id="updateById">
+        update t_user set username=#{username},password=#{password} where id=${id}
+    </update>
+    <select id="findUserById" resultType="entity.User">
+        select * from t_user where id=#{id}
+    </select>
+    <select id="testTwoArg" resultType="int">
+        select #{aa}+#{bb}
+    </select>
 </mapper>

@@ -23,6 +23,9 @@ public class MyBatisUtil {
         }
     }
     public static SqlSession getSqlSession(){
-        return sessionFactory.openSession();
+        return sessionFactory.openSession(true);
+    }
+    public static Object getMapper(Class<?> t ){
+        return getSqlSession().getMapper(t);
     }
 }
